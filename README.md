@@ -6,9 +6,9 @@
 
 - Đã scaffold Unity project bằng template **3D URP**.
 - Đã cấu hình Unity **6000.6.0f1** và Android Build Support.
-- Đã khai báo AR Foundation và Google ARCore XR Plugin **6.4.1**.
+- Đã khai báo AR Foundation và Google ARCore XR Plugin **6.7.1**.
 - Đã cấu hình Android package `com.solarsystemar.app`, IL2CPP và ARM64.
-- Chưa xác nhận camera AR trên thiết bị thật. Unity cần hoàn tất package restore và bật ARCore loader ở lần mở đầu tiên.
+- Package restore đã hoàn tất và project mở không có lỗi compile. Chưa bật ARCore loader hoặc xác nhận camera AR trên thiết bị thật.
 
 ## Yêu cầu
 
