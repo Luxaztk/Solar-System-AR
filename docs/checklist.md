@@ -26,9 +26,9 @@ Cập nhật gần nhất: **21/11/2026**
 
 | Xong | Nhiệm vụ | Thành viên | Trạng thái | Hạn | Ưu tiên | Sản phẩm bàn giao |
 |---|---|---|---|---|---|---|
-| [ ] | Viết ScaleCalculator | Lê Anh Đức | Chưa cập nhật | 20/11/2026 | MVP | `ScaleCalculator.cs` |
-| [ ] | Tạo test scene khoảng cách | Lê Anh Đức | Chưa cập nhật | 20/11/2026 | MVP | ScaleTestScene + kết quả |
-| [ ] | Thử đọc GPS bằng LocationService | Lê Anh Đức | Chưa cập nhật | 20/11/2026 | MVP | `LocationServiceController.cs` |
+| [x] | Viết ScaleCalculator | Lê Anh Đức | Chưa cập nhật | 20/11/2026 | MVP | `ScaleCalculator.cs` |
+| [x] | Tạo test scene khoảng cách | Lê Anh Đức | Chưa cập nhật | 20/11/2026 | MVP | ScaleTestScene + kết quả |
+| [x] | Thử đọc GPS bằng LocationService | Lê Anh Đức | Chưa cập nhật | 20/11/2026 | MVP | `LocationServiceController.cs` |
 | [ ] | Tạo bộ 9 prefab cơ bản | Trần Huy Hoàng | Chưa cập nhật | 20/11/2026 | MVP | Sun + 8 planet prefabs |
 | [ ] | Chuẩn hóa dữ liệu hành tinh | Trần Huy Hoàng | Chưa cập nhật | 20/11/2026 | MVP | `PlanetData.cs` / bảng PlanetData |
 | [ ] | Làm bảng thông tin mẫu | Trần Huy Hoàng | Chưa cập nhật | 20/11/2026 | MVP | Planet Info Panel |
