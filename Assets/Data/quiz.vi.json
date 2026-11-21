@@ -1,0 +1,9 @@
+{
+  "questions": [
+    {"prompt":"Hành tinh nào gần Mặt Trời nhất?","options":["Sao Thủy","Sao Kim","Trái Đất"],"correctIndex":0,"explanation":"Sao Thủy có khoảng cách quỹ đạo trung bình xấp xỉ 0,387 AU."},
+    {"prompt":"Hành tinh nào lớn nhất Hệ Mặt Trời?","options":["Sao Thổ","Sao Mộc","Sao Hải Vương"],"correctIndex":1,"explanation":"Sao Mộc có bán kính trung bình khoảng 69.911 km."},
+    {"prompt":"1 AU gần bằng khoảng cách nào?","options":["Mặt Trời–Trái Đất","Trái Đất–Mặt Trăng","Mặt Trời–Sao Hỏa"],"correctIndex":0,"explanation":"Một đơn vị thiên văn là khoảng cách trung bình giữa Trái Đất và Mặt Trời."},
+    {"prompt":"Hai hành tinh nào được gọi là các hành tinh khí khổng lồ?","options":["Trái Đất và Sao Hỏa","Sao Mộc và Sao Thổ","Sao Thiên Vương và Sao Hải Vương"],"correctIndex":1,"explanation":"Sao Mộc và Sao Thổ là các hành tinh khí khổng lồ; hai hành tinh xa hơn là các hành tinh băng khổng lồ."},
+    {"prompt":"Hành tinh nào nổi bật với hệ vành đai lớn?","options":["Sao Thổ","Sao Kim","Sao Thủy"],"correctIndex":0,"explanation":"Cả bốn hành tinh khổng lồ đều có vành đai, nhưng vành đai Sao Thổ dễ quan sát nhất."}
+  ]
+}

@@ -56,6 +56,16 @@ ProjectSettings/
 3. Khởi tạo hệ hành tinh, chọn hành tinh và hiển thị panel thông tin.
 4. Ổn định anchor/trạng thái, sửa lỗi, tối ưu và thử chỉ dẫn hướng.
 
+## Nội dung nhánh Hoang (tuần 1–4)
+
+- Scene nghiệm thu: `Assets/Scenes/HoangFeatureDemo.unity`.
+- Dữ liệu chuẩn hóa: `Assets/Data/Planets/` và `Assets/Data/quiz.vi.json`.
+- Bộ 9 prefab: `Assets/Prefabs/Planets/`.
+- UI: Start Menu, Tutorial, Planet Info Panel, nhãn 3D, Discovery Progress và Quiz.
+- Tài liệu yêu cầu, user flow, dữ liệu, asset audit và usability review: `docs/hoang/`.
+
+Mở scene demo và bấm Play để thử menu; sau khi bỏ qua hướng dẫn, chạm vào một hành tinh để mở panel thông tin. Có thể tái tạo toàn bộ asset bằng menu **Solar System AR > Generate Hoang Week 1-4 Content**.
+
 ## Quy ước Git
 
 - Nhánh chính: `main`

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d3a53608d379c47b5d9a175ad191f2, type: 3}
+  m_Name: earth
+  m_EditorClassIdentifier: Assembly-CSharp::SolarSystemAR.Core.PlanetData
+  id: earth
+  displayName: "Tr\xE1i \u0110\u1EA5t"
+  summary: "H\xE0nh tinh qu\xEA h\u01B0\u01A1ng c\u1EE7a ch\xFAng ta v\xE0 l\xE0 n\u01A1i duy nh\u1EA5t \u0111\xE3 bi\u1EBFt c\xF3 s\u1EF1 s\u1ED1ng."
+  distanceFromSunAu: 1
+  meanRadiusKm: 6371
+  orbitalPeriodDays: 365.26
+  rotationPeriodHours: 23.93
+  knownMoons: 1
+  displayColor: {r: 0.18039216, g: 0.5254902, b: 0.87058824, a: 1}
+  hasRings: 0
+  sourceUrl: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
