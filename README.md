@@ -65,3 +65,9 @@ ProjectSettings/
 - Nhánh tính năng: `feature/<ten-tinh-nang>`
 - Commit ngắn gọn, ví dụ: `feat: add AR placement scene`
 - Asset nhị phân lớn được quản lý bằng Git LFS.
+
+## Nội Dung nhánh Đức tuần 2
+
+- Hoàn thiện [`ScaleCalculator.cs`](Assets/Scripts/Core/ScaleCalculator.cs): đổi AU sang mét và tính vị trí theo hướng ngang đã chuẩn hóa.
+- Tạo scene [`ScaleTest.unity`](Assets/Scenes/ScaleTest.unity) với 8 hành tinh trên cùng trục; báo cáo [`scale-test-report.md`](docs/scale-test-report.md) ghi nhận 24/24 phép đối chiếu `Transform.position` đạt với gốc, hướng và scale khác nhau.
+- Hoàn thiện [`LocationServiceController.cs`](Assets/Scripts/Core/LocationServiceController.cs): yêu cầu quyền vị trí và hiển thị trạng thái, lat/lon, accuracy, timeout cùng thông báo lỗi. Kiểm thử GPS trên điện thoại vẫn chờ thiết bị Android.
