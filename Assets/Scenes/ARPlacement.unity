@@ -547,6 +547,8 @@ GameObject:
   - component: {fileID: 1518986258}
   - component: {fileID: 1518986261}
   - component: {fileID: 1518986260}
+  - component: {fileID: 1518986262}
+  - component: {fileID: 1518986263}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -619,7 +621,38 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_PlanePrefab: {fileID: 7064894921042283887, guid: 603e43edf2bd7bc4485631014e0c2d6c, type: 3}
-  m_DetectionMode: 1
+  m_DetectionMode: 3
+--- !u!114 &1518986262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518986257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.ARFoundation::UnityEngine.XR.ARFoundation.ARAnchorManager
+  <trackablesChanged>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  m_AnchorPrefab: {fileID: 0}
+--- !u!114 &1518986263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518986257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa2ce7d97d84ff9bd7a6e0d125fa1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SolarSystemAR.AR.ARPlacementManager
+  m_SunPrefab: {fileID: 1366647322215706589, guid: fa77ab142029ae445aa9f4f8575e2fda, type: 3}
+  m_PlaceholderDiameter: 0.15
+  m_ShowRuntimeUi: 1
 --- !u!1 &1765750962
 GameObject:
   m_ObjectHideFlags: 0

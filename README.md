@@ -8,7 +8,10 @@
 - Đã cấu hình Unity **6000.6.0f1** và Android Build Support.
 - Đã khai báo AR Foundation và Google ARCore XR Plugin **6.7.1**.
 - Đã cấu hình Android package `com.solarsystemar.app`, IL2CPP và ARM64.
-- Package restore đã hoàn tất và project mở không có lỗi compile. Chưa bật ARCore loader hoặc xác nhận camera AR trên thiết bị thật.
+- Đã bật ARCore loader và hoàn tất scene AR Placement: nhận diện mặt phẳng,
+  raycast, đặt Mặt Trời bằng anchor và reset.
+- Prototype **v0.1** (`versionCode 3`) build thành công và đã cài trên thiết bị
+  Android thật. Xem kết quả kiểm tra tại [`docs/week-2-ar-placement-test.md`](docs/week-2-ar-placement-test.md).
 
 ## Yêu cầu
 

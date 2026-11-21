@@ -9,6 +9,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using Unity.XR.CoreUtils;
+using SolarSystemAR.AR;
 
 namespace SolarSystemAR.Editor
 {
@@ -22,8 +23,13 @@ namespace SolarSystemAR.Editor
         private const string CameraScenePath = "Assets/Scenes/ARCameraTest.unity";
         private const string PlacementScenePath = "Assets/Scenes/ARPlacement.unity";
         private const string PlanePrefabPath = "Assets/Prefabs/ARPlaneVisualizer.prefab";
+        private const string SunPrefabPath = "Assets/Prefabs/SunPlaceholder.prefab";
+        private const string SunMaterialPath =
+            "Assets/Art/Materials/SunPlaceholder.mat";
         private const string MobileRendererPath = "Assets/Settings/Mobile_Renderer.asset";
-        private const string AndroidBuildPath = "Solar-System-AR.apk";
+        private const string AndroidBuildPath =
+            "Builds/Android/Solar-System-AR-v0.1.apk";
+        private const string AndroidApplicationIdentifier = "com.solarsystemar.app";
         private const string DebugPlaneMaterialPath =
             "Packages/com.unity.xr.arfoundation/Assets/Materials/DebugPlane.mat";
 
@@ -77,11 +83,16 @@ namespace SolarSystemAR.Editor
 
             var planeManager = GetOrAddComponent<ARPlaneManager>(xrOrigin.gameObject);
             GetOrAddComponent<ARRaycastManager>(xrOrigin.gameObject);
-            planeManager.requestedDetectionMode = PlaneDetectionMode.Horizontal;
+            GetOrAddComponent<ARAnchorManager>(xrOrigin.gameObject);
+            var placementManager = GetOrAddComponent<ARPlacementManager>(xrOrigin.gameObject);
+            planeManager.requestedDetectionMode =
+                PlaneDetectionMode.Horizontal | PlaneDetectionMode.Vertical;
             planeManager.planePrefab = CreateOrLoadPlanePrefab();
+            placementManager.SunPrefab = CreateOrLoadSunPrefab();
 
             EditorUtility.SetDirty(xrOrigin.gameObject);
             EditorUtility.SetDirty(planeManager);
+            EditorUtility.SetDirty(placementManager);
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene);
 
@@ -116,13 +127,24 @@ namespace SolarSystemAR.Editor
             Debug.Log("[SolarSystemAR] Android Graphics API set to OpenGLES3 only.");
         }
 
-        [MenuItem("Solar System AR/Build Android Test APK")]
+        [MenuItem("Solar System AR/Build Android Prototype v0.1")]
         public static void BuildAndroidTestApk()
         {
+            CreateOrUpdatePlacementScene();
             ConfigureARRenderer();
             ConfigureOpenGLES3ForAndroid();
+            PlayerSettings.SetApplicationIdentifier(
+                NamedBuildTarget.Android,
+                AndroidApplicationIdentifier);
+            PlayerSettings.bundleVersion = "0.1.0";
             PlayerSettings.Android.bundleVersionCode =
-                Mathf.Max(PlayerSettings.Android.bundleVersionCode, 2);
+                Mathf.Max(PlayerSettings.Android.bundleVersionCode, 3);
+
+            var buildDirectory = Path.GetDirectoryName(AndroidBuildPath);
+            if (!string.IsNullOrEmpty(buildDirectory))
+            {
+                Directory.CreateDirectory(buildDirectory);
+            }
 
             var enabledScenes = System.Array.FindAll(
                 EditorBuildSettings.scenes,
@@ -202,6 +224,43 @@ namespace SolarSystemAR.Editor
 
             var prefab = PrefabUtility.SaveAsPrefabAsset(planeObject, PlanePrefabPath);
             Object.DestroyImmediate(planeObject);
+            return prefab;
+        }
+
+        private static GameObject CreateOrLoadSunPrefab()
+        {
+            var existingPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(SunPrefabPath);
+            if (existingPrefab != null)
+            {
+                return existingPrefab;
+            }
+
+            var shader = Shader.Find("Universal Render Pipeline/Lit");
+            if (shader == null)
+            {
+                throw new BuildFailedException(
+                    "Universal Render Pipeline/Lit shader is unavailable.");
+            }
+
+            var sunColor = new Color(1f, 0.38f, 0.02f, 1f);
+            var material = new Material(shader)
+            {
+                name = "Sun Placeholder",
+                color = sunColor,
+            };
+            material.SetColor("_BaseColor", sunColor);
+            material.EnableKeyword("_EMISSION");
+            material.SetColor("_EmissionColor", sunColor * 2.5f);
+            AssetDatabase.CreateAsset(material, SunMaterialPath);
+
+            var sunObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            sunObject.name = "Sun Placeholder";
+            sunObject.transform.localScale = Vector3.one * 0.15f;
+            Object.DestroyImmediate(sunObject.GetComponent<SphereCollider>());
+            sunObject.GetComponent<Renderer>().sharedMaterial = material;
+
+            var prefab = PrefabUtility.SaveAsPrefabAsset(sunObject, SunPrefabPath);
+            Object.DestroyImmediate(sunObject);
             return prefab;
         }
 

@@ -32,9 +32,9 @@ Cập nhật gần nhất: **21/11/2026**
 | [ ] | Tạo bộ 9 prefab cơ bản | Trần Huy Hoàng | Chưa cập nhật | 20/11/2026 | MVP | Sun + 8 planet prefabs |
 | [ ] | Chuẩn hóa dữ liệu hành tinh | Trần Huy Hoàng | Chưa cập nhật | 20/11/2026 | MVP | `PlanetData.cs` / bảng PlanetData |
 | [ ] | Làm bảng thông tin mẫu | Trần Huy Hoàng | Chưa cập nhật | 20/11/2026 | MVP | Planet Info Panel |
-| [x] | Nhận diện mặt phẳng và AR Raycast | Chữ Văn Lộc | Chờ nghiệm thu | 20/11/2026 | MVP | Scene AR Placement |
-| [ ] | Đặt Mặt Trời, Anchor và reset | Chữ Văn Lộc | Chưa cập nhật | 20/11/2026 | MVP | `ARPlacementManager.cs` |
-| [ ] | Build prototype v0.1 | Chữ Văn Lộc | Chưa cập nhật | 20/11/2026 | MVP | APK v0.1 |
+| [x] | Nhận diện mặt phẳng và AR Raycast | Chữ Văn Lộc | Hoàn thành | 20/11/2026 | MVP | Scene AR Placement |
+| [x] | Đặt Mặt Trời, Anchor và reset | Chữ Văn Lộc | Hoàn thành | 20/11/2026 | MVP | `ARPlacementManager.cs` |
+| [x] | Build prototype v0.1 | Chữ Văn Lộc | Hoàn thành | 20/11/2026 | MVP | APK v0.1 |
 
 ## Tuần 3
 
